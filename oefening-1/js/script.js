@@ -18,3 +18,8 @@ function modifyHex(hex) {
     }
     return hex;
 }
+
+// ------------ helper Function ---------------------
+function addPound(x) {
+    return '#' + x;
+}
