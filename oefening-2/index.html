@@ -11,18 +11,16 @@
 <body>
     <h1>BMI Calculator</h1>
 
-    <div id="inputs">
+    <p>Geef uw lengte in cm</p>
+    <input type="text" class="lengte">
 
-        <p>Lengte in cm
-            <input type="text" id="lengte" class="required" /></p>
+    <p>Geef uw gewicht in kg</p>
+    <input type="text" class="gewicht">
 
-        <p>Gewicht in kg
-            <input type="text" id="gewicht" class="required" /></p>
+    <button onclick="bmi()">BMI Berekenen</button>
 
-        <button id="submit">Bereken BMI</button>
+    <p class="bmi-waarde"></p>
 
-        <span id="result">Uw BMI is <span id="bmi"></span> (<span id="category"></span>).</span>
-    </div>
     <!-------------------- script ---------------------->
     <script src="js/script.js"></script>
 </body>

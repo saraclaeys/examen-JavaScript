@@ -23,7 +23,7 @@ var nu = new Date();
 var uren = nu.getHours();
 var uren2 = ((uren < 10) ? "0" : "") + uren;
 var minuten = nu.getMinutes();
-var minuten2 = ((minuten < 10) ? ":0" : " ") + minuten;
+var minuten2 = ((minuten < 10) ? " 0" : " ") + minuten;
 
 var tijdweergave = uren2 + " uur" + minuten2 + " minuten"
 

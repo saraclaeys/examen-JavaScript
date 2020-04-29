@@ -1,18 +1,24 @@
-document.getElementById("submit").addEventListener("click", bmiCalculator);
-
-function bmiCalculator() {
-    let cm = parseInt(document.getElementById("lengte").value);
-    let kg = parseInt(document.getElementById("gewicht").value);
-    let bmi;
-    let meter = parseFloat(cm / 100);
-    bmi = kg / (Math.pow(meter, 2));
+function bmi() {
+    var x = parseInt(document.querySelector('.lengte').value);
+    var y = parseInt(document.querySelector('.gewicht').value);
+    cm = parseFloat(x / 100);
+    var bmi = y / (cm * cm);
     bmi = bmi.toFixed(1);
 
-    if (bmi < 18.6) {
-        document.getElementById("result").innerHTML = "Je bmi bedraagt: " + bmi + "<br> Je hebt ondergewicht";
-    } else if (bmi > 25) {
-        document.getElementById("result").innerHTML = "Je bmi bedraagt: " + bmi + "<br> Je hebt een normaal gewicht";
-    } else {
-        document.getElementById("result").innerHTML = "Je bmi bedraagt: " + bmi + "<br> Je hebt overgewicht";
+    if (bmi < 18.5) {
+        document.querySelector('.bmi-waarde').innerHTML = "Uw BMI is: " + bmi + "<br>" + " U heeft ondergewicht";
+        document.querySelector('.bmi-waarde').style.color = 'red'
+
+    } else if (bmi >= 18.5 && bmi < 25) {
+        document.querySelector('.bmi-waarde').innerHTML = "Uw BMI is: " + bmi + "<br>" + " U heeft een gezond gewicht";
+        document.querySelector('.bmi-waarde').style.color = 'green'
+
+    } else if (bmi >= 25 && bmi < 30) {
+        document.querySelector('.bmi-waarde').innerHTML = "Uw BMI is: " + bmi + "<br>" + " U heeft overgewicht";
+        document.querySelector('.bmi-waarde').style.color = 'orange'
+
+    } else if (bmi > 30) {
+        document.querySelector('.bmi-waarde').innerHTML = "Uw BMI is: " + bmi + "<br>" + " U heeft Obesitas";
+        document.querySelector('.bmi-waarde').style.color = 'red'
     }
 }
