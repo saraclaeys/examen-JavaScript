@@ -1,1 +1,2 @@
 # examen-JavaScript
+1.	Maak een pagina aan met een tekstveld en een knop ‘Verander kleur’. De gebruiker kan in het tekstveld een hex code ingeven. Wanneer er op de knop geklikt wordt dan verandert de background van de body in dat kleur. <br>
