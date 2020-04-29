@@ -23,3 +23,14 @@ function modifyHex(hex) {
 function addPound(x) {
     return '#' + x;
 }
+
+// ----------- add event listener ----------------------
+hex.addEventListener('keyup', function () {
+    let color = hex.value
+    if (checkHex(color)) {
+        color = modifyHex(color);
+        document.body.style.backgroundColor = addPound(color);
+        getContrastYIQ(color)
+        rgb.value = hexToRgb(color);
+    }
+})
