@@ -1,19 +1,18 @@
-function bmiCalculator(gewicht, lengte) {
+document.getElementById("submit").addEventListener("click", bmiCalculator);
 
-    let bmiCalc = gewicht / Math.pow(lengte, 2);
-    let bmi = Math.round(bmiCalc);
+function bmiCalculator() {
+    let cm = parseInt(document.getElementById("lengte").value);
+    let kg = parseInt(document.getElementById("gewicht").value);
+    let bmi;
+    let meter = parseFloat(cm / 100);
+    bmi = kg / (Math.pow(meter, 2));
+    bmi = bmi.toFixed(1);
 
-    if (bmi < 18.5) {
-        return ("Your BMI is " + bmi + ", so you are underweight.");
-    }
-
-    if (bmi >= 18.5 && bmi <= 24.9) {
-        return ("Your BMI is " + bmi + ", so you have a normal weight.");
-    }
-
-    if (bmi >= 30 && bmi <= 34.9) {
-        return ("Your BMI is " + bmi + ", so you are overweight.");
+    if (bmi < 18.6) {
+        document.getElementById("result").innerHTML = "Je bmi bedraagt: " + bmi + "<br> Je hebt ondergewicht";
+    } else if (bmi > 25) {
+        document.getElementById("result").innerHTML = "Je bmi bedraagt: " + bmi + "<br> Je hebt een normaal gewicht";
     } else {
-        return ("Your BMI is " + bmi + ", so you are overweight.");
+        document.getElementById("result").innerHTML = "Je bmi bedraagt: " + bmi + "<br> Je hebt overgewicht";
     }
 }
